@@ -1,0 +1,14 @@
+{
+  "name": "allied-upload-test",
+  "version": "1.0.0",
+  "description": "test pic pay upload in xamarin ios web view",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "wickdninja",
+  "license": "MIT",
+  "devDependencies": {
+    "firebase-tools": "^6.9.2"
+  }
+}
