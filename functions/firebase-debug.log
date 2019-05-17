@@ -1,0 +1,171 @@
+[debug] [2019-05-17T18:28:43.226Z] ----------------------------------------------------------------------
+[debug] [2019-05-17T18:28:43.228Z] Command:       /usr/local/bin/node /Users/wickdninja/.npm-packages/bin/firebase deploy
+[debug] [2019-05-17T18:28:43.228Z] CLI Version:   6.7.1
+[debug] [2019-05-17T18:28:43.228Z] Platform:      darwin
+[debug] [2019-05-17T18:28:43.228Z] Node Version:  v10.13.0
+[debug] [2019-05-17T18:28:43.229Z] Time:          Fri May 17 2019 14:28:43 GMT-0400 (Eastern Daylight Time)
+[debug] [2019-05-17T18:28:43.229Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-05-17T18:28:43.243Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-05-17T18:28:43.244Z] > authorizing via signed-in user
+[debug] [2019-05-17T18:28:43.244Z] [iam] checking project allied-upload-test for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2019-05-17T18:28:43.247Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-05-17T18:28:43.247Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-05-17T18:28:43.519Z] <<< HTTP RESPONSE 200
+[debug] [2019-05-17T18:28:43.541Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/allied-upload-test:testIamPermissions  
+
+[debug] [2019-05-17T18:28:43.821Z] <<< HTTP RESPONSE 200
+[debug] [2019-05-17T18:28:43.822Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/allied-upload-test  
+ 
+[debug] [2019-05-17T18:28:44.058Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'allied-upload-test'...
+[info] 
+[info] i  deploying functions, hosting
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint
+[info] Running command: npm --prefix "$RESOURCE_DIR" run build
+[info] ✔  functions: Finished running predeploy script.
+[debug] [2019-05-17T18:28:51.686Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "tslint --project tsconfig.json",
+    "build": "tsc",
+    "serve": "npm run build && firebase serve --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "~7.0.0",
+    "firebase-functions": "^2.2.0"
+  },
+  "devDependencies": {
+    "tslint": "^5.12.0",
+    "typescript": "^3.2.2"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2019-05-17T18:28:51.687Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/allied-upload-test?view=CONSUMER_VIEW  
+ 
+[debug] [2019-05-17T18:28:51.688Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/allied-upload-test?view=CONSUMER_VIEW  
+ 
+[debug] [2019-05-17T18:28:52.485Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: all necessary APIs are enabled
+[debug] [2019-05-17T18:28:52.523Z] <<< HTTP RESPONSE 200
+[debug] [2019-05-17T18:28:52.524Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/allied-upload-test  
+ 
+[debug] [2019-05-17T18:28:52.714Z] <<< HTTP RESPONSE 200
+[debug] [2019-05-17T18:28:52.715Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/629614922871:getServerAppConfig  
+ 
+[debug] [2019-05-17T18:28:52.902Z] <<< HTTP RESPONSE 200
+[debug] [2019-05-17T18:28:52.903Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/allied-upload-test/versions  
+
+[debug] [2019-05-17T18:28:53.793Z] <<< HTTP RESPONSE 200
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2019-05-17T18:28:53.794Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/allied-upload-test/configs  
+ 
+[debug] [2019-05-17T18:28:54.025Z] <<< HTTP RESPONSE 200
+[info] i  functions: packaged functions (33.28 KB) for uploading
+[debug] [2019-05-17T18:28:54.243Z] >>> HTTP REQUEST POST https://cloudfunctions.googleapis.com/v1/projects/allied-upload-test/locations/us-central1/functions:generateUploadUrl  
+ 
+[debug] [2019-05-17T18:28:54.744Z] <<< HTTP RESPONSE 200
+[debug] [2019-05-17T18:28:54.745Z] >>> HTTP REQUEST PUT https://storage.googleapis.com/gcf-upload-us-central1-9b36ccb3-d3e5-46d4-90f9-2dd7b866d16e/650f0534-8be2-4f1e-9f2f-8c2df8132b3e.zip?GoogleAccessId=service-629614922871@gcf-admin-robot.iam.gserviceaccount.com&Expires=1558119534&Signature=pZ28M%2FPwzrg%2FHbK3ukec2lHPXp4SoEVCumxS6lzG2uOFzW2QRQsNV5zuko90zkzFXFuggibZI8Si3pn1PjWUK5LlQIRatGft1UEWPFv0WSojqQZSHDFS6bKFvObZ1Q7FMw8tV8fQ3xSh31CXuJUJDRxathBwd0j7nYzjNjMTrILNDHuQFgnQM93tMWCSI%2BFTqt8mGkJI%2B1bTUAwZ3eVSIu97n8YoySPA17vImDAoc77hIZlBKPY4pxauNCoXudlSjVhN1XkdIlcOdni93bPOs%2FSQYxmaWCbkWBbX0f%2FvRaQn2hM7N%2BwT2Ne0jifHYTmwtKVurMlbjgA0Qf5sDj7nqw%3D%3D  
+
+[debug] [2019-05-17T18:28:55.156Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: functions folder uploaded successfully
+[info] i  hosting[allied-upload-test]: beginning deploy...
+[info] i  hosting[allied-upload-test]: found 1 files in wwwroot
+[debug] [2019-05-17T18:28:55.170Z] [hosting] hash cache [d3d3cm9vdA] load error: lines is not defined
+[debug] [2019-05-17T18:28:55.176Z] [hosting] hash cache [d3d3cm9vdA] stored for 1 files
+[debug] [2019-05-17T18:28:55.177Z] [hosting][hash queue][FINAL]
+[debug] [2019-05-17T18:28:55.177Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/allied-upload-test/versions/ef5de1579fab84b5:populateFiles  
+ <request body omitted>
+[debug] [2019-05-17T18:28:55.499Z] <<< HTTP RESPONSE 200
+[debug] [2019-05-17T18:28:55.501Z] [hosting][populate queue][FINAL]
+[debug] [2019-05-17T18:28:55.501Z] [hosting] uploads queued: 1
+[debug] [2019-05-17T18:28:56.652Z] [hosting][upload queue][FINAL]
+[info] ✔  hosting[allied-upload-test]: file upload complete
+[debug] [2019-05-17T18:28:56.652Z] [hosting] deploy completed after 1495ms
+[debug] [2019-05-17T18:28:56.655Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/allied-upload-test/locations/-/functions  
+ 
+[debug] [2019-05-17T18:28:57.100Z] <<< HTTP RESPONSE 200
+[info] i  functions: updating Node.js 6 function helloWorld(us-central1)...
+[debug] [2019-05-17T18:28:57.103Z] Trigger is:  {"httpsTrigger":{}}
+[info] i  functions: updating Node.js 6 function upload(us-central1)...
+[debug] [2019-05-17T18:28:57.103Z] Trigger is:  {"httpsTrigger":{}}
+[debug] [2019-05-17T18:28:57.104Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudscheduler.googleapis.com/projectSettings/allied-upload-test?view=CONSUMER_VIEW  
+ 
+[debug] [2019-05-17T18:28:57.905Z] <<< HTTP RESPONSE 200
+[debug] [2019-05-17T18:28:57.907Z] >>> HTTP REQUEST PATCH https://cloudfunctions.googleapis.com/v1/projects/allied-upload-test/locations/us-central1/functions/helloWorld {"updateMask":"sourceUploadUrl,name,labels,httpsTrigger"} 
+
+[debug] [2019-05-17T18:28:57.909Z] >>> HTTP REQUEST PATCH https://cloudfunctions.googleapis.com/v1/projects/allied-upload-test/locations/us-central1/functions/upload {"updateMask":"sourceUploadUrl,name,labels,httpsTrigger"} 
+
+[debug] [2019-05-17T18:28:58.606Z] <<< HTTP RESPONSE 200
+[debug] [2019-05-17T18:28:58.607Z] <<< HTTP RESPONSE 200
+[debug] [2019-05-17T18:28:58.609Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/allied-upload-test/locations/-/functions  
+ 
+[debug] [2019-05-17T18:28:59.046Z] <<< HTTP RESPONSE 200
+[debug] [2019-05-17T18:28:59.048Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxsaWVkLXVwbG9hZC10ZXN0L3VzLWNlbnRyYWwxL2hlbGxvV29ybGQvUHVyS2VtWWdNYlU  
+ 
+[debug] [2019-05-17T18:28:59.048Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxsaWVkLXVwbG9hZC10ZXN0L3VzLWNlbnRyYWwxL3VwbG9hZC92ZHNYdDhLM0wtSQ  
+ 
+[debug] [2019-05-17T18:28:59.219Z] <<< HTTP RESPONSE 200
+[debug] [2019-05-17T18:28:59.237Z] <<< HTTP RESPONSE 200
+[debug] [2019-05-17T18:29:01.221Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxsaWVkLXVwbG9hZC10ZXN0L3VzLWNlbnRyYWwxL2hlbGxvV29ybGQvUHVyS2VtWWdNYlU  
+ 
+[debug] [2019-05-17T18:29:01.239Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxsaWVkLXVwbG9hZC10ZXN0L3VzLWNlbnRyYWwxL3VwbG9hZC92ZHNYdDhLM0wtSQ  
+ 
+[debug] [2019-05-17T18:29:01.436Z] <<< HTTP RESPONSE 200
+[debug] [2019-05-17T18:29:01.437Z] <<< HTTP RESPONSE 200
+[debug] [2019-05-17T18:29:03.442Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxsaWVkLXVwbG9hZC10ZXN0L3VzLWNlbnRyYWwxL3VwbG9hZC92ZHNYdDhLM0wtSQ  
+ 
+[debug] [2019-05-17T18:29:03.442Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxsaWVkLXVwbG9hZC10ZXN0L3VzLWNlbnRyYWwxL2hlbGxvV29ybGQvUHVyS2VtWWdNYlU  
+ 
+[debug] [2019-05-17T18:29:03.607Z] <<< HTTP RESPONSE 200
+[debug] [2019-05-17T18:29:03.617Z] <<< HTTP RESPONSE 200
+[debug] [2019-05-17T18:29:05.609Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxsaWVkLXVwbG9hZC10ZXN0L3VzLWNlbnRyYWwxL3VwbG9hZC92ZHNYdDhLM0wtSQ  
+ 
+[debug] [2019-05-17T18:29:05.618Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxsaWVkLXVwbG9hZC10ZXN0L3VzLWNlbnRyYWwxL2hlbGxvV29ybGQvUHVyS2VtWWdNYlU  
+ 
+[debug] [2019-05-17T18:29:05.780Z] <<< HTTP RESPONSE 200
+[debug] [2019-05-17T18:29:05.794Z] <<< HTTP RESPONSE 200
+[debug] [2019-05-17T18:29:07.783Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxsaWVkLXVwbG9hZC10ZXN0L3VzLWNlbnRyYWwxL3VwbG9hZC92ZHNYdDhLM0wtSQ  
+ 
+[debug] [2019-05-17T18:29:07.797Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxsaWVkLXVwbG9hZC10ZXN0L3VzLWNlbnRyYWwxL2hlbGxvV29ybGQvUHVyS2VtWWdNYlU  
+ 
+[debug] [2019-05-17T18:29:07.954Z] <<< HTTP RESPONSE 200
+[debug] [2019-05-17T18:29:07.961Z] <<< HTTP RESPONSE 200
+[debug] [2019-05-17T18:29:09.955Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxsaWVkLXVwbG9hZC10ZXN0L3VzLWNlbnRyYWwxL3VwbG9hZC92ZHNYdDhLM0wtSQ  
+ 
+[debug] [2019-05-17T18:29:09.961Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxsaWVkLXVwbG9hZC10ZXN0L3VzLWNlbnRyYWwxL2hlbGxvV29ybGQvUHVyS2VtWWdNYlU  
+ 
+[debug] [2019-05-17T18:29:10.113Z] <<< HTTP RESPONSE 200
+[debug] [2019-05-17T18:29:10.120Z] <<< HTTP RESPONSE 200
+[debug] [2019-05-17T18:29:12.119Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxsaWVkLXVwbG9hZC10ZXN0L3VzLWNlbnRyYWwxL3VwbG9hZC92ZHNYdDhLM0wtSQ  
+ 
+[debug] [2019-05-17T18:29:12.124Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxsaWVkLXVwbG9hZC10ZXN0L3VzLWNlbnRyYWwxL2hlbGxvV29ybGQvUHVyS2VtWWdNYlU  
+ 
+[debug] [2019-05-17T18:29:12.303Z] <<< HTTP RESPONSE 200
+[debug] [2019-05-17T18:29:12.304Z] <<< HTTP RESPONSE 200
+[debug] [2019-05-17T18:29:14.303Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxsaWVkLXVwbG9hZC10ZXN0L3VzLWNlbnRyYWwxL3VwbG9hZC92ZHNYdDhLM0wtSQ  
+ 
+[debug] [2019-05-17T18:29:14.305Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxsaWVkLXVwbG9hZC10ZXN0L3VzLWNlbnRyYWwxL2hlbGxvV29ybGQvUHVyS2VtWWdNYlU  
+ 
+[debug] [2019-05-17T18:29:14.464Z] <<< HTTP RESPONSE 200
+[debug] [2019-05-17T18:29:14.484Z] <<< HTTP RESPONSE 200
+[debug] [2019-05-17T18:29:16.466Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxsaWVkLXVwbG9hZC10ZXN0L3VzLWNlbnRyYWwxL3VwbG9hZC92ZHNYdDhLM0wtSQ  
+ 
+[debug] [2019-05-17T18:29:16.485Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxsaWVkLXVwbG9hZC10ZXN0L3VzLWNlbnRyYWwxL2hlbGxvV29ybGQvUHVyS2VtWWdNYlU  
+ 
+[debug] [2019-05-17T18:29:16.655Z] <<< HTTP RESPONSE 200
+[debug] [2019-05-17T18:29:16.671Z] <<< HTTP RESPONSE 200
+[debug] [2019-05-17T18:29:18.659Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxsaWVkLXVwbG9hZC10ZXN0L3VzLWNlbnRyYWwxL3VwbG9hZC92ZHNYdDhLM0wtSQ  
+ 
+[debug] [2019-05-17T18:29:18.672Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxsaWVkLXVwbG9hZC10ZXN0L3VzLWNlbnRyYWwxL2hlbGxvV29ybGQvUHVyS2VtWWdNYlU  
+ 
+[debug] [2019-05-17T18:29:18.841Z] <<< HTTP RESPONSE 200
+[debug] [2019-05-17T18:29:18.862Z] <<< HTTP RESPONSE 200
