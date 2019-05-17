@@ -5,6 +5,7 @@ var App = (function($) {
     $.ajax({
       type: 'POST',
       url: 'https://us-central1-allied-upload-test.cloudfunctions.net/upload',
+      crossDomain: true,
       success: function(response) {
         console.log({ response });
       },
