@@ -1,0 +1,16 @@
+{
+  "name": "allied-upload-test",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "deploy": "firebase deploy",
+    "deploy:hosting": "firebase deploy --only hosting",
+    "deploy:functions": "cd functions && npm run deploy ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "firebase-tools": "^6.10.0"
+  }
+}
